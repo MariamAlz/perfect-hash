@@ -8,14 +8,14 @@ Perfect hashing in Python. The script builds a two-level hash table for a static
 
 ## What it does
 
-- Reads `n` keys from `test-in.txt`.
+- Reads `n` keys from `examples/test-in.txt`.
 - **First level**: hashes the keys into a table of size `8n` with a universal hash function `h(k) = ((a·k + b) mod p) mod m`, where `p` is a random prime between 10,000 and 20,000, `a` is in `[1, p-1]` and `b` is in `[0, p-1]`.
 - **Second level**: a slot that receives `n_j` keys gets its own table of size `n_j²`. New random parameters are drawn until each key lands in an empty second-level slot.
-- Writes the hash parameters and the final position of every key to `test-out.txt`.
+- Writes the hash parameters and the final position of every key to `examples/test-out.txt`.
 
 ## Input and output format
 
-`test-in.txt`: the number of keys on the first line, then one key per line. The included example:
+`examples/test-in.txt`: the number of keys on the first line, then one key per line. The included example:
 
 ```
 5
@@ -26,7 +26,7 @@ Perfect hashing in Python. The script builds a two-level hash table for a static
 875
 ```
 
-`test-out.txt` is written in three parts:
+`examples/test-out.txt` is written in three parts:
 
 1. One line `m a b`: the first-level table size (`8n`) and hash parameters.
 2. `8n` lines `m_j a_j b_j`: the size and parameters of each second-level table (`0 0 0` for empty slots).
@@ -49,8 +49,8 @@ Parameters are random, so each run produces different values.
 | File | Contents |
 | --- | --- |
 | `perfect-hash.py` | Two-level perfect hashing script |
-| `test-in.txt` | Example input (5 keys) |
-| `test-out.txt` | Output from a run on the example input |
+| `examples/test-in.txt` | Example input (5 keys) |
+| `examples/test-out.txt` | Output from a run on the example input |
 
 ## Getting started
 
@@ -60,7 +60,7 @@ Requirements: Python 3 (standard library only).
 python perfect-hash.py
 ```
 
-Run it from the repository folder. It reads `test-in.txt` and overwrites `test-out.txt`.
+It reads `examples/test-in.txt` and overwrites `examples/test-out.txt`.
 
 ## Tech
 

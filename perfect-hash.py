@@ -7,8 +7,9 @@
 import random
 import os
 
-inF = open("test-in.txt", "r")
-outF = open("test-out.txt", "w")
+HERE = os.path.dirname(os.path.abspath(__file__))
+inF = open(os.path.join(HERE, "examples", "test-in.txt"), "r")
+outF = open(os.path.join(HERE, "examples", "test-out.txt"), "w")
 n = int(inF.readline())
 keys_size = [0] * 8*n
 keys_hashes = []
